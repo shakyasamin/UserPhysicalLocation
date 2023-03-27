@@ -1,6 +1,7 @@
 import React from "react";
 import northernPic from "./image/northern hemisphere.jpg";
 import southernPic from "./image/southern hemisphere.png";
+import "./Hemisphere.css";
 
 const hemisphereConfig = {
   Northern: {
@@ -19,9 +20,15 @@ const HemisphereDisplay = ({ latitude }) => {
   const { text, picture } = hemisphereConfig[hemisphere];
 
   return (
-    <div>
-      <img src={picture} alt="" />
-      {text}
+    <div className={hemisphere}>
+      <div className="ui raised text container segment">
+        <div className="image">
+          <img src={picture} alt="" />
+        </div>
+        <div className="ui teal bottom attached label">
+          <h1>{text}</h1>
+        </div>
+      </div>
     </div>
   );
 };
